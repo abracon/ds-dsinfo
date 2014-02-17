@@ -1,0 +1,79 @@
+class de.abracon.dsinfo.DSInfo extends Component {
+	/**
+		Retrieves the number of rows in the result set.
+		
+		<returns>
+		The number of rows in the data source's result set.
+		</returns>
+	*/
+	int getNumberOfRows() {*
+		return this.numberOfRows;
+	*}
+	
+	/**
+		Retrieves a dimension member's key at position <tt>index</tt> in the result set.
+		  
+		<returns>
+		Key of the given member at the given position.
+		</returns>
+  	*/
+	String getMemberKey(/* Dimension of the data source. */ Dimension dimension,
+		/* Index of the member in the result set. */ int index) {*
+		var data = JSON.parse(this.dimensions),
+			dimension = dimension.toString(),
+			index = index || 0,
+			result = '', i, len;
+
+		for(i = 0, len = data.length; i < len; i++) {
+			if(data[i].key === dimension) {
+				return data[i].members[index].key;
+			}
+		}
+		return result;
+	*}
+	
+	/**
+		Retrieves a dimension member's text at position <tt>index</tt> in the result set.
+		  
+		<returns>
+		Text of the given member at the given position.
+		</returns>
+  	*/
+	String getMemberText(/* Dimension of the data source. */ Dimension dimension,
+		/* Index of the member in the result set. */ int index) {*
+		var data = JSON.parse(this.dimensions),
+			dimension = dimension.toString(),
+			index = index || 0,
+			result = '', i, len;
+
+		for(var i = 0, len = data.length; i < len; i++) {
+			if(data[i].key === dimension) {
+				return data[i].members[index].text;
+			}
+		}
+		return result;
+	*}
+
+	/**
+		Retrieves all members of the given dimension in the result set.
+		  
+		<returns>
+		Concatenation of member texts separated by the given <tt>separator</tt>.
+		</returns>
+  	*/
+	String getMembers(/* Dimension of the data source. */ Dimension dimension,
+		/* String to separate member texts. */ String separator) {*
+		var data = JSON.parse(this.dimensions),
+			dimension = dimension.toString(),
+			result = [], i, len_i, j, len_j;
+
+		for(i = 0, len_i = data.length; i < len_i; i++) {
+			if(data[i].key === dimension) {
+				for(j = 0, len_j = data[i].members.length; j < len_j; j++) {
+					result.push(data[i].members[j].text);
+				}
+			}
+		}
+		return result.join(separator);
+	*}
+}

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ABRACON Data Source Info
+Bundle-SymbolicName: de.abracon.dsinfo;singleton:=true
+Bundle-Version: 0.2
+Require-Bundle: com.sap.ip.bi.zen.rt.components.sdk.eclipse
+Bundle-Vendor: ABRACON GmbH

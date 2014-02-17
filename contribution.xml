@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension xmlns="http://www.sap.com/bi/zen/sdk"
+	title="ABRACON Data Source Info"
+	version="0.2"
+	vendor="ABRACON GmbH"
+	id="de.abracon.dsinfo">
+	<group id="abracon" title="ABRACON Addons" />
+	
+	<component id="DSInfo"
+		title="Data Source Info"
+		icon="res/icon.png"
+		databound="true"
+		handlerType="div"
+		group="abracon">
+		
+		<jsInclude>res/js/component.js</jsInclude>
+
+		<property id="resultSet" type="ResultSet" title="Result Set" group="DataBinding"/>
+		<property id="numberOfRows" type="int" title="Number of Rows" group="DataBinding" visible="false"/>
+		<property id="dimensions" type="String" title="Dimensions as JSON string" group="DataBinding" visible="false"/>
+
+		<property id="onvaluechange" type="ScriptText" title="On Value Change" group="Events" />
+
+		<initialization>
+			<defaultValue property="WIDTH">100</defaultValue>
+			<defaultValue property="HEIGHT">100</defaultValue>
+			<defaultValue property="DESIGNER_VISIBLE">false</defaultValue>
+			<defaultValue property="VISIBLE">true</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>
