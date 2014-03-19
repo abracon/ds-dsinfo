@@ -18,17 +18,6 @@ sap.designstudio.sdk.Component.subclass("de.abracon.dsinfo.DSInfo", function () 
     // Executed each time after all properties of the custom extension component
     // have been updated.
     this.afterUpdate = function () {
-//        // Get the number of rows in the result set.
-//        var $this = this.$();
-//
-//        $this.empty();
-//        $this.html('Data Source Info: ' + '<br>' + this.numberOfRows() + ' rows');
-//
-//        // Only display the component in design mode. 
-//        if (!sap.zen.designmode) {
-//            $this.css('display', 'none');
-//        }
-
         // TODO: firePropertiesChanged will make the run time trigger this method once more..
         this.firePropertiesChanged(["numberOfRows", "dimensions"]);
         this.fireEvent('onvaluechange');
@@ -50,7 +39,6 @@ sap.designstudio.sdk.Component.subclass("de.abracon.dsinfo.DSInfo", function () 
                 dimensions : [],
                 axis_rows : []
             };
-            _updateIndicator = true;
             return this;
         }
     };

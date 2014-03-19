@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdkExtension xmlns="http://www.sap.com/bi/zen/sdk"
 	title="ABRACON Data Source Info"
-	version="0.4"
+	version="0.42"
 	vendor="ABRACON GmbH"
 	id="de.abracon.dsinfo">
 	<group id="abracon" title="ABRACON Addons" />
